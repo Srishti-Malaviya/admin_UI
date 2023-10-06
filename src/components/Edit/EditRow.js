@@ -8,7 +8,7 @@ const EditRow = ({
   handleEditForm,
   handleCancelButton,
   checked,
-  selectUser,
+  selectUser
 }) => {
   return (
     <tr className={checked ? "backgroundChange" : "backgroundOriginal"}>

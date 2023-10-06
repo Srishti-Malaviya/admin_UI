@@ -1,6 +1,7 @@
 import React from "react";
 import "./ReadRow.css";
 import { MdModeEdit, MdDelete } from "react-icons/md";
+
 const ReadRow = ({
   user,
   handleEditButton,
@@ -25,10 +26,10 @@ const ReadRow = ({
         <button
           type="button"
           className="edit"
-          onClick={(event) => handleEditButton(event, user)}
-        >
+          onClick={(event) => handleEditButton(event, user)}>
           <MdModeEdit />
         </button>
+
         <button type="button" className="delete" onClick={deleteUser}>
           <MdDelete />
         </button>

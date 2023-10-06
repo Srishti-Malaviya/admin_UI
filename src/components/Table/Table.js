@@ -3,6 +3,7 @@ import "./Table.css";
 import ReadRow from "../Read/ReadRow";
 import EditRow from "../Edit/EditRow";
 import Pagination from "../Pagination/Pagination";
+
 const Table = () => {
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
@@ -29,7 +30,6 @@ const Table = () => {
   //Edit Form
   const handleEditForm = (event) => {
     event.preventDefault();
-
     const name = event.target.getAttribute("name");
     const value = event.target.value;
     const newFormData = { ...editForm };
@@ -47,7 +47,6 @@ const Table = () => {
       email: user.email,
       role: user.role,
     };
-
     setEditForm(formValues);
   };
 
@@ -125,7 +124,6 @@ const Table = () => {
   };
 
   //Multiple User Deletion
-
   const deleteMultipleUsers = () => {
     setSelectAllCheckBox(false);
     for (let idx = 0; idx < selectCheckBox.length; idx++) {
@@ -134,9 +132,8 @@ const Table = () => {
   };
 
   //Single User Deletion
-
-  const handleDelete = (userId) => {
-    setUsers((prevUser) => prevUser.filter((user) => user.id !== userId));
+  const handleDelete = (user_id) => {
+    setUsers((prevUser) => prevUser.filter((user) => user.id !== user_id));
   };
 
   //Update Current Page
@@ -146,6 +143,7 @@ const Table = () => {
     }
   };
 
+  //Update Page No.
   useEffect(() => {
     if (currentPageNum === 1) {
       return;
