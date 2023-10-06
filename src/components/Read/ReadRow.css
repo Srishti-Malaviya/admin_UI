@@ -1,0 +1,22 @@
+.backgroundChange {
+  background-color: lightgrey;
+}
+.backgroundOriginal {
+  background-color: #dfdaee;
+}
+.edit {
+  background-color: #dfdaee;
+  border: none;
+}
+.edit:hover {
+  transform: scale(1.25);
+}
+
+.delete {
+  background-color: #dfdaee;
+  color: red;
+  border: none;
+}
+.delete:hover {
+  transform: scale(1.25);
+}

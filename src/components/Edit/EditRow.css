@@ -1,0 +1,44 @@
+.save {
+  color: green;
+  background-color: #dfdaee;
+  font-size: 5px;
+  border-radius: 50%;
+  border: none;
+}
+.save:hover {
+  transform: scale(1.25);
+}
+
+.cancel {
+  color: red;
+  background-color: #dfdaee;
+  margin-top: 2px;
+  padding-top: 2px;
+  border-radius: 50%;
+  border: none;
+}
+.cancel:hover {
+  transform: scale(1.25);
+}
+
+.input.innercheckBox {
+  width: 30px;
+  height: 30px;
+}
+
+.backgroundChange {
+  background-color: lightgrey;
+}
+.backgroundOriginal {
+  background-color: #dfdaee;
+}
+
+td input {
+  font-size: 17px;
+  border: 0;
+  outline: none;
+}
+
+td input:focus {
+  border: 2px solid #555;
+}
