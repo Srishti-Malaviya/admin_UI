@@ -1,4 +1,5 @@
 import { React, useState, useEffect, Fragment } from "react";
+import axios from "axios";
 import "./Table.css";
 import ReadRow from "../Read/ReadRow";
 import EditRow from "../Edit/EditRow";
@@ -152,13 +153,22 @@ const Table = () => {
   }, [handleDelete]);
 
   //Fetch users first time
+  const fetchUsers = async () => {
+    try { 
+      let res = await axios.get(
+        "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"
+      );
+      setUsers(res.data);
+    } catch (error) {
+      alert("Unable to fetch data!");
+      console.log("Error:",error);
+    }
+  };
+
   useEffect(() => {
-    fetch(
-      "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"
-    )
-      .then((res) => res.json())
-      .then((data) => setUsers(data));
+    fetchUsers();
   }, []);
+
 
   //Update users based on filter
   useEffect(() => {
